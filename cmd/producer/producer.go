@@ -1,11 +1,11 @@
 package main
 
 import (
-	conf "producer/internal/conf"
+	conf "producer/pkg/conf"
 	mb "producer/pkg/messageBroker"
 
 	log "github.com/sirupsen/logrus"
-	logging "producer/internal/log"
+	logging "producer/pkg/log"
 )
 
 
