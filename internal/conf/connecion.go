@@ -1,4 +1,4 @@
-package env
+package conf
 
 import (
 	log "github.com/sirupsen/logrus"

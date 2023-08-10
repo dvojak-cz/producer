@@ -1,7 +1,7 @@
 package main
 
 import (
-	env "producer/internal/env"
+	conf "producer/internal/conf"
 	mb "producer/pkg/messageBroker"
 
 	log "github.com/sirupsen/logrus"
@@ -17,19 +17,19 @@ func main() {
 	log.Infoln("Starting producer")
 	broker, err := mb.NewRabbitMQBroker(
 		mb.NewConnectionDataRMQ(
-			env.MessageBrokerHost,
-			env.MessageBrokerPort,
-			env.MessageBrokerUser,
-			env.MessageBrokerPassword,
+			conf.MessageBrokerHost,
+			conf.MessageBrokerPort,
+			conf.MessageBrokerUser,
+			conf.MessageBrokerPassword,
 		),
 	)
 	logging.PanicOnError(err, "Error creating broker")
 	defer broker.Close()
 	log.Infoln("Broker created")
 
-	err = broker.DeclareQueue(env.MessageBrokerQueue)
+	err = broker.DeclareQueue(conf.MessageBrokerQueue)
 	logging.PanicOnError(err, "Error declaring queue")
 	log.Infoln("Queue declared")
 
-	err = broker.Publish(env.MessageBrokerQueue, []byte("Hello World!"))
+	err = broker.Publish(conf.MessageBrokerQueue, []byte("Hello World!"))
 }
