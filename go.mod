@@ -1,4 +1,4 @@
-module producer
+module github.com/dvojak-cz/producer
 
 go 1.20
 

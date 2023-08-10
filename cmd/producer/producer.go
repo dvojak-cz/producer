@@ -1,11 +1,11 @@
 package main
 
 import (
-	conf "producer/pkg/conf"
-	mb "producer/pkg/messageBroker"
+	conf "github.com/dvojak-cz/producer/pkg/conf"
+	mb "github.com/dvojak-cz/producer/pkg/messageBroker"
 
 	log "github.com/sirupsen/logrus"
-	logging "producer/pkg/log"
+	logging "github.com/dvojak-cz/producer/pkg/log"
 )
 
 
